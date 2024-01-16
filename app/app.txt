@@ -1,0 +1,26 @@
+# from flask import Flask
+# from imports import *
+# # from ex_blueprint import example_blueprint
+
+
+# app = Flask(__name__)
+# # app.register_blueprint(example_blueprint)
+    # app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///main.db'
+    # app.config['SECRET_KEY'] = "abcd"
+    # app.config['SESSION_TYPE'] = 'memcached'
+# #Models
+
+# #Auth & New User
+# from .Auth import routes
+# app.register_blueprint(Auth.auth_bp)
+# #Dashboard
+
+
+# @app.route('/')
+# def index():
+#     return "Index page"
+
+
+
+# if __name__ == '__main__':
+#     app.run(debug=True, port=5000)
