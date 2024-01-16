@@ -17,8 +17,15 @@
               Dropdown
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="{{ url_for('auth_bp.login') }}">Login</li>
-              <li><a class="dropdown-item" href="{{url_for('auth_bp.logout')}}">Logout</a></li>
+              {%if not current_user.is_authenticated%}
+                <li><a class="dropdown-item" href="{{ url_for('auth_bp.login') }}">Login</li>
+                {%endif%}
+                  {%if current_user.is_authenticated%}
+              <li><a class="dropdown-item" href="{{url_for('auth_bp.logout')}}">Logout</a></li> 
+              {%else%}
+              <li><a class="nav-link disabled" href="#">Logout</a></li> 
+              {%endif%}
+              
               <li><hr class="dropdown-divider"></li>
               <li><a class="dropdown-item" href="#">Something else here</a></li>
             </ul>
